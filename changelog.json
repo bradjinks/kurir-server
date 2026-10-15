@@ -1,5 +1,12 @@
 [
   {
+    "version": "2026.140",
+    "date": "2026-10-15",
+    "changes": [
+      "The sidebar Next up card shows the whole meeting name, and under it the rest of today's events"
+    ]
+  },
+  {
     "version": "2026.139",
     "date": "2026-10-08",
     "changes": [

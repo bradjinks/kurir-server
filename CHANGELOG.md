@@ -4,6 +4,20 @@ All notable changes to Kurir are documented here. Versioning follows CalVer (`YY
 
 ## [Unreleased]
 
+## [v2026.140] - 2026-10-15
+
+### Changed
+
+- The sidebar's Next up card shows the whole meeting name. The title gets the
+  card's full width over up to three lines, with the start time and Join on
+  the line under it. Under that, in the same card, come up to four of today's
+  remaining events, then "N more today"; each opens the calendar. Several
+  all-day events share one line. The calendar's Next up card wraps its title
+  to two lines. Same card as the Mac sidebar (#244)
+- Weekly dependency update. Next.js 16.4.0, Radix UI dialog/popover/tooltip
+  1.2-1.3, lucide-react 1.55.0, mailparser 3.9.38, marked 18.1.0, tsdav
+  2.4.0, libmime 5.4.7 (#241)
+
 ## [v2026.139] - 2026-10-08
 
 ### Added

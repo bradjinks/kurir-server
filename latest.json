@@ -6,11 +6,11 @@
   "minVersion": "0.0.0",
   "releasedAt": "2026-09-21T14:00:49Z",
   "beta": {
-    "version": "2026.139",
-    "image": "ghcr.io/cfarvidson/kurir-server:v2026.139",
-    "releaseUrl": "https://github.com/cfarvidson/kurir-server/releases/tag/v2026.139",
-    "changelog": "Mail list marks threads you have replied to; event dialog shows day and time first",
+    "version": "2026.140",
+    "image": "ghcr.io/cfarvidson/kurir-server:v2026.140",
+    "releaseUrl": "https://github.com/cfarvidson/kurir-server/releases/tag/v2026.140",
+    "changelog": "Sidebar Next up shows the whole meeting name and the rest of today",
     "minVersion": "0.0.0",
-    "releasedAt": "2026-10-08T11:34:54Z"
+    "releasedAt": "2026-10-15T11:34:48Z"
   }
 }
