@@ -30,7 +30,13 @@ export type TodayRow = {
   time: string;
   color: string;
   isPast: boolean;
+  isAllDay: boolean;
 };
+
+/** A row's key: the occurrence of the event, `<eventId>:<startAt>`. */
+function rowKey(instance: CalendarInstanceDTO): string {
+  return `${instance.eventId}:${instance.startAt}`;
+}
 
 /**
  * The event every Next up card shows (the sidebar's and the calendar
@@ -129,11 +135,55 @@ export function todayRows(
     .map((i) => {
       const wall = zonedParts(new Date(i.startAt), timeZone);
       return {
-        key: `${i.eventId}:${i.startAt}`,
+        key: rowKey(i),
         title: i.title,
         time: i.isAllDay ? "All day" : formatTimeLabel(wall.hour, wall.minute),
         color: i.color,
         isPast: !i.isAllDay && new Date(i.endAt) <= now,
+        isAllDay: i.isAllDay,
       };
     });
+}
+
+/**
+ * The rest of today under the Mail panel's Next up card: `todayRows` less
+ * the finished ones and the event already on the card, with several
+ * all-day events on one line so they leave room for the timed ones.
+ * Mirrors `SidebarToday.laterToday` in kurir-ios.
+ */
+export function laterToday(
+  instances: CalendarInstanceDTO[],
+  now: Date,
+  timeZone: string,
+): TodayRow[] {
+  const next = nextUpEvent(instances, now);
+  const later = todayRows(instances, now, timeZone).filter(
+    (row) => !row.isPast && (!next || row.key !== rowKey(next)),
+  );
+  const days = later.filter((row) => row.isAllDay);
+  if (days.length < 2) return later;
+  return [
+    {
+      ...days[0],
+      key: "all-day",
+      title: days.map((row) => row.title).join(", "),
+    },
+    ...later.filter((row) => !row.isAllDay),
+  ];
+}
+
+/** How many of the rest of today the card lists; the others are a
+ * "N more today" line. */
+export const LATER_TODAY_LIMIT = 4;
+
+/** The rows the card lists and how many are left for "N more today".
+ * Mirrors `SidebarToday.capLater` in kurir-ios. */
+export function capLater(later: TodayRow[]): {
+  rows: TodayRow[];
+  more: number;
+} {
+  return {
+    rows: later.slice(0, LATER_TODAY_LIMIT),
+    more: Math.max(later.length - LATER_TODAY_LIMIT, 0),
+  };
 }
