@@ -1,5 +1,12 @@
 [
   {
+    "version": "2026.141",
+    "date": "2026-10-15",
+    "changes": [
+      "The Replied mark in mail lists is drawn in the accent color, like the Pinned mark"
+    ]
+  },
+  {
     "version": "2026.140",
     "date": "2026-10-15",
     "changes": [

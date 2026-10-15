@@ -6,11 +6,11 @@
   "minVersion": "0.0.0",
   "releasedAt": "2026-09-21T14:00:49Z",
   "beta": {
-    "version": "2026.140",
-    "image": "ghcr.io/cfarvidson/kurir-server:v2026.140",
-    "releaseUrl": "https://github.com/cfarvidson/kurir-server/releases/tag/v2026.140",
-    "changelog": "Sidebar Next up shows the whole meeting name and the rest of today",
+    "version": "2026.141",
+    "image": "ghcr.io/cfarvidson/kurir-server:v2026.141",
+    "releaseUrl": "https://github.com/cfarvidson/kurir-server/releases/tag/v2026.141",
+    "changelog": "Replied mark in mail lists is drawn in the accent color, like the pin",
     "minVersion": "0.0.0",
-    "releasedAt": "2026-10-15T11:34:48Z"
+    "releasedAt": "2026-10-15T14:05:32Z"
   }
 }

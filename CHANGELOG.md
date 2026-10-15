@@ -4,6 +4,14 @@ All notable changes to Kurir are documented here. Versioning follows CalVer (`YY
 
 ## [Unreleased]
 
+## [v2026.141] - 2026-10-15
+
+### Changed
+
+- The mail list's Replied mark is drawn in the accent color, like the Pinned
+  mark, so a thread you answered stands out. When it shows is unchanged. Same
+  mark as the iPhone and Mac apps (#245)
+
 ## [v2026.140] - 2026-10-15
 
 ### Changed
